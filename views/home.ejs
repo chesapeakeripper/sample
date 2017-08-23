@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+
+    Schedule for Winterfell <br><br>
+    <form action="/select_booktime">
+      Free Slots in Winterfell <br>
+      <% for (var i = 0; i < data["winterfell"].length ; i+=2 ) { %>
+          <% start = new Date(data["winterfell"][i]) %>
+          <li>
+            <%= (start.getHours() < 10 ? '0' : "") %><%=start.getHours()%>:<%= (start.getMinutes() < 10 ? "0" : "") %><%= start.getMinutes() %>
+            <% end = new Date(data["winterfell"][i+1]) %>
+            - <%= (end.getHours() < 10 ? '0' : "")%><%=end.getHours()%>:<%= (end.getMinutes() < 10 ? "0" : "") %><%= end.getMinutes() %>
+        </li>
+      <%}%>
+      <input type = "hidden" name = "userId" value = <%= data["userId"] %> >
+      <input type = "hidden" name = "room" value = "Winterfell" >
+      <button type="submit">Book Winterfell</button>
+    </form><br>
+
+    Schedule for Dragonstone <br><br>
+    <form action="/select_booktime">
+      Free Slots in Dragonstone <br>
+      <% for (var i = 0; i < data["dragonstone"].length ; i+=2 ) { %>
+          <% start = new Date(data["dragonstone"][i]) %>
+          <li>
+            <%= (start.getHours() < 10 ? '0' : "") %><%=start.getHours()%>:<%= (start.getMinutes() < 10 ? "0" : "") %><%= start.getMinutes() %>
+            <% end = new Date(data["dragonstone"][i+1]) %>
+            - <%= (end.getHours() < 10 ? '0' : "")%><%=end.getHours()%>:<%= (end.getMinutes() < 10 ? "0" : "") %><%= end.getMinutes() %>
+        </li>
+      <%}%>
+      <input type = "hidden" name = "userId" value = <%= data["userId"] %> >
+      <input type = "hidden" name = "room" value = "Dragonstone" >
+      <button type="submit">Book Dragonstone</button>
+    </form><br>
+
+    Schedule for Kings Landing <br><br>
+    <form action="/select_booktime">
+      Free Slots in Kings Landing <br>
+      <% for (var i = 0; i < data["kingslanding"].length ; i+=2 ) { %>
+          <% start = new Date(data["kingslanding"][i]) %>
+          <li>
+            <%= (start.getHours() < 10 ? '0' : "") %><%=start.getHours()%>:<%= (start.getMinutes() < 10 ? "0" : "") %><%= start.getMinutes() %>
+            <% end = new Date(data["kingslanding"][i+1]) %>
+            - <%= (end.getHours() < 10 ? '0' : "")%><%=end.getHours()%>:<%= (end.getMinutes() < 10 ? "0" : "") %><%= end.getMinutes() %>
+        </li>
+      <%}%>
+      <input type = "hidden" name = "userId" value = <%= data["userId"]%> >
+      <input type = "hidden" name = "room" value = "Kings_Landing" >
+      <button type="submit">Book King Landing</button>
+    </form><br>
+
+    Schedule for Meetin Room 1 <br><br>
+    <form action="/select_booktime">
+      Free Slots in Meeting Room 1 <br>
+      <% for (var i = 0; i < data["meetingroom1"].length ; i+=2 ) { %>
+          <% start = new Date(data["meetingroom1"][i]) %>
+          <li>
+            <%= (start.getHours() < 10 ? '0' : "") %><%=start.getHours()%>:<%= (start.getMinutes() < 10 ? "0" : "") %><%= start.getMinutes() %>
+            <% end = new Date(data["meetingroom1"][i+1]) %>
+            - <%= (end.getHours() < 10 ? '0' : "")%><%=end.getHours()%>:<%= (end.getMinutes() < 10 ? "0" : "") %><%= end.getMinutes() %>
+        </li>
+      <%}%>
+      <input type = "hidden" name = "userId" value = <%= data["userId"] %> >
+      <input type = "hidden" name = "room" value = "Meeting_Room_1" >
+      <button type="submit">Book Meeting Room 1</button>
+    </form>
+
+    Schedule for Meeting Room 2 <br><br>
+    <form action="/select_booktime">
+      Free Slots in Meeting Room 2 <br>
+      <% for (var i = 0; i < data["meetingroom2"].length ; i+=2 ) { %>
+          <% start = new Date(data["meetingroom2"][i]) %>
+          <li>
+            <%= (start.getHours() < 10 ? '0' : "") %><%=start.getHours()%>:<%= (start.getMinutes() < 10 ? "0" : "") %><%= start.getMinutes() %>
+            <% end = new Date(data["meetingroom2"][i+1]) %>
+            - <%= (end.getHours() < 10 ? '0' : "")%><%=end.getHours()%>:<%= (end.getMinutes() < 10 ? "0" : "") %><%= end.getMinutes() %>
+        </li>
+      <%}%>
+      <input type = "hidden" name = "userId" value = <%= data["userId"] %> >
+      <input type = "hidden" name = "room" value = "Meeting_Room_2" >
+      <button type="submit">Book Meeting Room 2</button>
+    </form><br>
+
+
+  </body>
+</html>

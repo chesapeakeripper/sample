@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <form action="/home">
+      <input type  ="hidden" name = "userId" value = <%= data["userId"] %>
+      <button type="submit" >Book Rooms</button>
+    </form>
+    Your events today <br>
+    Winterfell : <br>
+    <%if(data["winterfell"].length == 0) {%>
+        <li>No Events</li>
+    <%}%>
+    <%if(data["winterfell"].length!= 0){%>
+      <% for ( var i=0;i < data["winterfell"].length;i++){%>
+        <li>
+          <%=data["winterfell"][i].start%> - <%=data["winterfell"][i].end %> (<%=data["winterfell"][i].description%>)
+        </li>
+      <%}%>
+    <%}%>
+
+    Winterfell : <br>
+    <%if(data["dragonstone"].length == 0) {%>
+        <li>No Events</li>
+    <%}%>
+    <%if(data["dragonstone"].length!= 0){%>
+      <% for ( var i=0;i < data["dragonstone"].length;i++){%>
+        <li>
+          <%=data["dragonstone"][i].start%> - <%=data["dragonstone"][i].end %> (<%=data["dragonstone"][i].description%>)
+        </li>
+      <%}%>
+    <%}%>
+
+    Kings Landing : <br>
+    <%if(data["kingslanding"].length == 0) {%>
+        <li>No Events</li>
+    <%}%>
+    <%if(data["kingslanding"].length!= 0){%>
+      <% for ( var i=0;i < data["kingslanding"].length;i++){%>
+        <li>
+          <%=data["kingslanding"][i].start%> - <%=data["kingslanding"][i].end %> (<%=data["kingslanding"][i].description%>)
+        </li>
+      <%}%>
+    <%}%>
+
+    Meeting Room 1 : <br>
+    <%if(data["meetingroom1"].length == 0) {%>
+        <li>No Events</li>
+    <%}%>
+    <%if(data["meetingroom1"].length!= 0){%>
+      <% for ( var i=0;i < data["meetingroom1"].length;i++){%>
+        <li>
+          <%=data["meetingroom1"][i].start%> - <%=data["meetingroom1"][i].end %> (<%=data["meetingroom1"][i].description%>)
+        </li>
+      <%}%>
+    <%}%>
+
+    Meeting Room 2 : <br>
+    <%if(data["meetingroom2"].length == 0) {%>
+        <li>No Events</li>
+    <%}%>
+    <%if(data["meetingroom2"].length!= 0){%>
+      <% for ( var i=0;i < data["meetingroom2"].length;i++){%>
+        <li>
+          <%=data["meetingroom2"][i].start%> - <%=data["meetingroom2"][i].end %> (<%=data["meetingroom2"][i].description%>)
+        </li>
+      <%}%>
+    <%}%>
+  </body>
+</html>
